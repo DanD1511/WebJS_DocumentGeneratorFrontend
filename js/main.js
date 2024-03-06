@@ -48,3 +48,8 @@ async function generateDocument() {
         alert(`Ocurrió un error al generar el documento: ${error.message}`);
     }
 }
+
+function updateFileName(input) {
+    var fileName = input.files[0].name;
+    input.nextElementSibling.textContent = fileName;
+}

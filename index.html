@@ -6,17 +6,20 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    <!-- Contenedor exterior agregado para efecto de difuminado -->
     <div class="outer-container">
         <div class="container">
             <h1>Document Generator</h1>
             <div class="input-group">
-                <h3>Template</h3>
-                <input type="file" id="template" name="template" required>
+                <label for="template" class="file-upload">
+                    <span>Choose a template</span>
+                    <input type="file" id="template" name="template" required onchange="updateFileName(this);">
+                </label>
             </div>
             <div class="input-group">
-                <h3>Data</h3>
-                <input type="file" id="data" name="data" required>
+                <label for="data" class="file-upload">
+                    <span>Choose data</span>
+                    <input type="file" id="data" name="data" required onchange="updateFileName(this);">
+                </label>
             </div>
             <button onclick="generateDocument()">Generate</button>
             <div id="loading" style="display: none;">
@@ -27,9 +30,6 @@
                 <button id="downloadBtn">Download Document</button>
             </div>
         </div>
-    </div>
-    <div class="logo-container">
-        <img src="./styles/ESCUDO_JUNIOR.svg.png" alt="Logo">
     </div>
     <script src="./js/main.js"></script>
 </body>
