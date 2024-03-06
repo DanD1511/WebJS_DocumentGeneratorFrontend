@@ -2,24 +2,35 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Generador de Documentos</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Si usas un archivo CSS externo -->
-    <!-- O puedes incluir el CSS directamente aquí usando <style>...</style> -->
+    <title>Document Generator</title>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Cargar Archivos para Generar Documento</h2>
-        <div class="input-group">
-            <h3>Template</h3>
-            <input type="file" id="template" name="template" required>
+    <!-- Contenedor exterior agregado para efecto de difuminado -->
+    <div class="outer-container">
+        <div class="container">
+            <h1>Document Generator</h1>
+            <div class="input-group">
+                <h3>Template</h3>
+                <input type="file" id="template" name="template" required>
+            </div>
+            <div class="input-group">
+                <h3>Data</h3>
+                <input type="file" id="data" name="data" required>
+            </div>
+            <button onclick="generateDocument()">Generate</button>
+            <div id="loading" style="display: none;">
+                <div class="load"></div>
+            </div>
+            <div id="downloadLink" style="display: none;">
+                <p>Document Ready.</p>
+                <button id="downloadBtn">Download Document</button>
+            </div>
         </div>
-        <div class="input-group">
-            <h3>Data</h3>
-            <input type="file" id="data" name="data" required>
-        </div>
-        <button onclick="generateDocument()">Generar Documento</button>
     </div>
-
-    <script src="main.js"></script>
+    <div class="logo-container">
+        <img src="./styles/ESCUDO_JUNIOR.svg.png" alt="Logo">
+    </div>
+    <script src="./js/main.js"></script>
 </body>
 </html>
